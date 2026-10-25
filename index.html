@@ -230,6 +230,16 @@ h1 em,h2 em{background-image:linear-gradient(90deg,#9b5de5,#ff6ec7,#7c3aed,#9b5d
 #sorry{position:relative;z-index:2;min-height:24px;text-align:center;transition:.9s}.sl{font:italic 600 26px 'Playfair Display',serif;color:#fff;margin:4px 0;opacity:0;transform:scale(.8);animation:slin .9s forwards;text-shadow:0 0 18px var(--g)}@keyframes slin{to{opacity:1;transform:none}}
 #eyes[data-p="2"] #sorry{opacity:.5;transform:scale(.78);margin-top:-8px}#eyes[data-p="2"] .ehead,#eyes[data-p="2"] .orbs{display:none}#eyes[data-p="1"] .etxt,#eyes[data-p="1"] .eyew,#eyes[data-p="1"] .esub{display:none}
 
+#jar{position:absolute;inset:0;z-index:6;background:radial-gradient(circle at 50% 18%,#43297a,#150d2b 75%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;transition:opacity 1s;overflow:hidden}#jar.gone{opacity:0;pointer-events:none}
+.jhead{position:relative;z-index:2}.jhead .hand{font-size:28px;color:#ffd966}.jsub{font:700 14px Nunito;color:#d9c7f5;margin-top:2px}.jsub b{color:#ffb3e6}
+.jarw{position:relative;z-index:2;width:210px;height:262px;margin:10px 0 6px;transition:filter 1.2s}.jsvg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}#jar.full .jarw{filter:drop-shadow(0 0 34px #ff9ad5)}
+.ff2{position:absolute;width:46px;height:46px;margin:-23px;padding:0;border:0;border-radius:50%;background:radial-gradient(#fff 0 12%,#ffe27a 28%,#ffb84d66 55%,transparent 72%);animation:ffl 4s ease-in-out infinite;cursor:pointer}
+.ff2:nth-of-type(2){animation-delay:-.8s}.ff2:nth-of-type(3){animation-delay:-1.6s}.ff2:nth-of-type(4){animation-delay:-2.4s}.ff2:nth-of-type(5){animation-delay:-3.2s}.ff2:nth-of-type(6){animation-delay:-1.1s}
+.ff2:not(.lit):after{content:"";position:absolute;inset:6px;border-radius:50%;border:2px solid #ffe27a;animation:rp 1.8s infinite}
+.ff2.lit{background:radial-gradient(#fff 0 12%,#ff9ad5 30%,#c45cff66 58%,transparent 74%);animation:ffl 6s ease-in-out infinite;pointer-events:none}@keyframes ffl{50%{transform:translate(12px,-16px) scale(1.15)}}
+#jnote{position:relative;z-index:2;min-height:100px;width:min(90%,330px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.je{font-size:34px}.jt{font:italic 600 19px/1.4 'Playfair Display',serif;color:#f3e6ff}#jnote.p .je,#jnote.p .jt{animation:jin .8s both}@keyframes jin{from{opacity:0;transform:translateY(12px) scale(.92)}}.jh{font:700 15px Nunito;color:#d9c7f5;animation:bounce 1.4s infinite}
+#jarBtn{position:relative;z-index:2;margin-top:6px}
+
 </style></head><body>
 <div class="app" id="app">
 <div class="dots" id="dots"></div>
@@ -274,12 +284,7 @@ h1 em,h2 em{background-image:linear-gradient(90deg,#9b5de5,#ff6ec7,#7c3aed,#9b5d
 </section>
 
 <section class="sc bgA" id="s3">
- <div id="eyes" data-s="n" data-p="1"><div class="ebg n"></div><div class="ebg d"></div><div class="ebg g"></div><div class="ebg k"></div><div class="eskip" id="eskip">skip ⏭</div>
-<div class="ehead"><span class="hand" style="color:#ffd966">Ek chhota sa mukabla tha… 🏆</span><div class="esm">Teeno ko touch karo 👆</div></div>
-<div class="orbs"><button class="orb" data-t="moon" style="--g:#cfe3ff">🌙</button><button class="orb" data-t="sun" style="--g:#ffb347">☀️</button><button class="orb" data-t="nature" style="--g:#8ff0a4">🌿</button></div>
-<div id="sorry"></div><div class="etxt" id="etxt"></div>
-<div class="eyew" id="eyew"><div id="eyef" class="open"><div id="eyepic"></div><canvas id="scr" width="340" height="176"></canvas></div></div>
-<div class="esub" id="esub">Inme meri poori duniya basti hai 💜</div><button class="btn" id="eyesBtn" style="visibility:hidden">Aage chalo 💜</button></div>
+ <div id="jar"><div class="jhead"><span class="hand">Meri jaan ki 6 baatein 💜</span><div class="jsub">jo mujhe sabse pyaari hain · <b id="jcnt">0 / 6</b></div></div><div class="jarw"><svg class="jsvg" viewBox="0 0 200 250"><defs><linearGradient id="jg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff26"/><stop offset="1" stop-color="#a77bff40"/></linearGradient></defs><rect x="55" y="4" width="90" height="24" rx="7" fill="#8a67bd"/><rect x="62" y="28" width="76" height="14" rx="4" fill="#ffffff22" stroke="#d6b8ff66"/><path d="M42 50Q18 60 16 108V200Q16 240 56 242H144Q184 240 184 200V108Q182 60 158 50Z" fill="url(#jg)" stroke="#d6b8ffaa" stroke-width="2.5"/><path d="M34 78Q28 140 34 200" stroke="#ffffff55" stroke-width="5" fill="none" stroke-linecap="round"/></svg><button class="ff2" style="left:22%;top:34%" aria-label="jugnu"></button><button class="ff2" style="left:62%;top:26%" aria-label="jugnu"></button><button class="ff2" style="left:42%;top:46%" aria-label="jugnu"></button><button class="ff2" style="left:26%;top:66%" aria-label="jugnu"></button><button class="ff2" style="left:66%;top:60%" aria-label="jugnu"></button><button class="ff2" style="left:46%;top:82%" aria-label="jugnu"></button></div><div id="jnote"></div><button class="btn" id="jarBtn" style="visibility:hidden">Aage chalo 💜</button></div>
  <div class="cake" id="cake1"><div class="cd" style="left:78px"><div class="fl"></div></div><div class="cd" style="left:112px"><div class="fl"></div></div><div class="cd" style="left:146px"><div class="fl"></div></div>
  <div class="t t3"></div><div class="t t2"></div><div class="t t1"></div><span class="smoke" style="left:100px">💨</span></div>
  <h2>Close your eyes…</h2>
@@ -340,7 +345,7 @@ $('#dots').innerHTML=sc.map(()=>'<i></i>').join('');
 for(let i=0;i<40;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*2}s`;$('#s2').appendChild(s)}
 function go(n){sc[cur].classList.remove('on');cur=n;sc[n].classList.add('on');$$('#dots i').forEach((d,i)=>d.classList.toggle('on',i==n));
  if(n==0){countUp();setSong('bd');if(aud){aud.pause();aud.currentTime=0}}if(n==6){CFG.songUrl?playFile():setSong('emo')}if(n==5)initGal();if(n==6)typeLetter();if(n==7){confetti(90);hearts(innerWidth/2,innerHeight/2)}
- pageBalloons(n);if(n==2)resetLamp();if(n==4){tapOK=0;clearTimeout(tapT);tapT=setTimeout(()=>{tapOK=1;$('#cuth').textContent='ya phir cake pe tap karo 👆'},6500)}if(n==3){$('#cake1').classList.remove('out');startEyes()}}
+ pageBalloons(n);if(n==2)resetLamp();if(n==4){tapOK=0;clearTimeout(tapT);tapT=setTimeout(()=>{tapOK=1;$('#cuth').textContent='ya phir cake pe tap karo 👆'},6500)}if(n==3){$('#cake1').classList.remove('out');startJar()}}
 $$('[data-next]').forEach(b=>b.onclick=()=>{startMusic();go(cur+1)});
 /* balloons */
 const cols=['#b794f6','#9b5de5','#d6b8ff','#ff9ad5','#7c3aed','#c4a5ff'];
@@ -411,7 +416,7 @@ function openQuiz(){$('#quiz').classList.remove('gone');showQ(0)}
 function showQ(i){qi=i;qlock=0;const q=Q[i];$('#qprog').innerHTML=Q.map((_,k)=>`<i class="${k<=i?'on':''}"></i>`).join('');$('#qe').textContent=q.e;$('#qq').textContent=q.q;$('#qmsg').textContent='';
  const o=$('#qopts');o.innerHTML='';q.o.forEach((t,k)=>{const b=document.createElement('button');b.className='qo';b.textContent=t;b.onclick=()=>ans(b,k);o.appendChild(b)})}
 function ans(b,k){if(qlock)return;vib();const q=Q[qi];if(q.a<0||k==q.a){qlock=1;b.classList.add('ok');confetti(40);spawnBalloons(3);showTipOnce('🎈 Balloons aaye! Touch karke phodo 💜');$('#qmsg').textContent=['Sahi pakde hain! 💜','Wah meri jaan 🥹💗','Tum to mere dil ko jaanti ho 🥰'][qi%3];setTimeout(()=>{if(qi<Q.length-1)showQ(qi+1);else endQuiz()},1300)}else{b.classList.add('no');$('#qmsg').textContent='Hmm, ye to nahi hai 🙈 Dobara socho, jaan';setTimeout(()=>b.classList.remove('no'),500)}}
-$('#eyepic').style.backgroundImage=`url("${IMG.eyes}")`;
+
 /* lamp */
 const lamp=$('#lamp'),pull=$('#pull'),s2=$('#s2');
 function resetLamp(){lampDone=0;s2.classList.remove('lit');lamp.classList.remove('flick');pull.classList.remove('drag');pull.style.transform=''}
@@ -424,27 +429,15 @@ function lampOn(){if(lampDone)return;lampDone=1;startMusic();vib();pull.classLis
  const C=['#c4a5ff','#ff9ad5','#9b5de5','#ffd6f2','#b794f6','#e0ccff'];let o='<path d="M0 6Q50 44 100 6Q150 44 200 6Q250 44 300 6Q350 44 400 6" fill="none" stroke="#c9b6e8" stroke-width="1.2"/>';
  for(let s=0;s<4;s++)for(let t=.14;t<.9;t+=.14){const x=s*100+100*t,y=6+76*t*(1-t);o+=`<circle class="lt" cx="${x}" cy="${y+4}" r="3.6" fill="${C[(s+Math.round(t*7))%6]}" style="animation-delay:${(s*7+t*10)*.12}s"/>`}
  $('#fsvg').innerHTML=o})();
-/* eyes */
-function petal(){const p=document.createElement('i');p.className='pt';p.textContent=['🌸','🍃','🌿','💜'][Math.random()*4|0];p.style.cssText=`left:${Math.random()*95}%;--dx:${(Math.random()-.5)*80}px;animation-duration:${4+Math.random()*3}s`;p.onanimationend=()=>p.remove();$('#eyes').appendChild(p)}
-let sorryN=0,scrOK=0;const SOR={moon:['Sorry moon 🌙','#cfe3ff','n'],sun:['Sorry sun ☀️','#ffb347','d'],nature:['Sorry nature 🌿','#8ff0a4','g']};
-function orbTap(b){if(b.classList.contains('done'))return;b.classList.add('done');vib();const [t,g,bg]=SOR[b.dataset.t],l=document.createElement('div');l.className='sl';l.textContent=t;l.style.setProperty('--g',g);$('#sorry').appendChild(l);$('#eyes').dataset.s=bg;
- const r=b.getBoundingClientRect(),a=AR();boom(r.left-a.left+44,r.top-a.top+44,g,14);if(b.dataset.t=='nature')for(let i=0;i<10;i++)et.push(setTimeout(petal,i*130));if(++sorryN==3)et.push(setTimeout(phase2,1400))}
-function phase2(){const E=$('#eyes'),t=$('#etxt'),L='Her eyes are more beautiful…';E.dataset.p='2';E.dataset.s='k';$('#eskip').classList.remove('v');t.classList.add('hb');[...L].forEach((c,i)=>et.push(setTimeout(()=>{t.textContent=L.slice(0,i+1)},700+i*75)));et.push(setTimeout(()=>{$('#eyew').classList.add('on');initScratch()},700+L.length*75+500))}
-function initScratch(){const c=$('#scr'),x=c.getContext&&c.getContext('2d');if(!x){revealEyes();return}c.classList.remove('gone');x.globalCompositeOperation='source-over';const w=c.width,h=c.height,g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,'#6d3fc0');g.addColorStop(.5,'#c9a7ff');g.addColorStop(1,'#7c3aed');x.fillStyle=g;x.fillRect(0,0,w,h);
- for(let i=0;i<70;i++){x.fillStyle='rgba(255,255,255,'+Math.random()*.5+')';x.beginPath();x.arc(Math.random()*w,Math.random()*h,Math.random()*2.2,0,6.3);x.fill()}
- x.fillStyle='#fff';x.font='700 30px Caveat,cursive';x.textAlign='center';x.fillText('✨ yahan rub karo ✨',w/2,h/2+10);
- let dn=0,lx,ly,mv=0;const P=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*w/r.width,(e.clientY-r.top)*h/r.height]};
- c.onpointerdown=e=>{dn=1;[lx,ly]=P(e);try{c.setPointerCapture(e.pointerId)}catch(_){}scr2(x,lx,ly,lx,ly)};
- c.onpointermove=e=>{if(!dn||scrOK)return;const [px,py]=P(e);scr2(x,lx,ly,px,py);lx=px;ly=py;if(++mv%10==0)chkScr(x,w,h)};
- c.onpointerup=()=>{dn=0;chkScr(x,w,h)}}
-function scr2(x,a,b,c,d){x.globalCompositeOperation='destination-out';x.lineWidth=40;x.lineCap='round';x.beginPath();x.moveTo(a,b);x.lineTo(c,d);x.stroke()}
-function chkScr(x,w,h){if(scrOK)return;const d=x.getImageData(0,0,w,h).data;let n=0,t=0;for(let i=3;i<d.length;i+=148){t++;if(d[i]<100)n++}if(n/t>.38)revealEyes()}
-function revealEyes(){if(scrOK)return;scrOK=1;$('#scr').classList.add('gone');confetti(60);vib();et.push(setTimeout(()=>$('#esub').classList.add('v'),900));et.push(setTimeout(()=>{$('#eyesBtn').style.visibility='visible'},1800))}
-function startEyes(){et.forEach(x=>clearTimeout(x));et=[];sorryN=0;scrOK=0;const E=$('#eyes');E.classList.remove('gone');E.dataset.s='n';E.dataset.p='1';$$('.orb').forEach(o=>o.classList.remove('done'));$('#sorry').innerHTML='';$('#etxt').textContent='';$('#etxt').className='etxt';$('#eyew').classList.remove('on');$('#esub').className='esub';$('#eyesBtn').style.visibility='hidden';$('#scr').classList.remove('gone');$('#eskip').classList.remove('v');et.push(setTimeout(()=>$('#eskip').classList.add('v'),5000))}
-$$('.orb').forEach(o=>o.onclick=()=>orbTap(o));
-$('#eskip').onclick=()=>{et.forEach(x=>clearTimeout(x));const E=$('#eyes'),t=$('#etxt');E.dataset.p='2';E.dataset.s='k';t.textContent='Her eyes are more beautiful…';t.className='etxt hb';$('#eyew').classList.add('on');scrOK=0;revealEyes();$('#eskip').classList.remove('v')};
-$('#eyesBtn').onclick=()=>{$('#eyes').classList.add('gone');hearts(innerWidth/2,innerHeight/2);vib()};
-(function(){const E=$('#eyes'),a=$('.ehead');for(let i=0;i<40;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*2}s`;E.insertBefore(s,a)}})();
+/* jar */
+const JN=[['😊','Tumhari ek muskurahat mere poore din ko bana deti hai.'],['😤','Tumhara gussa… wo bhi mujhe pyaara lagta hai.'],['😜','Tumhari shararatein aur mujhe tang karna, sab kuch khaas hai.'],['🎧','Tumhari awaaz sunkar dil ko ek alag hi khushi milti hai.'],['💬','Tumhari chhoti-chhoti baatein, jo main hamesha yaad rakhta hoon.'],['🫂','Tumse milke samajh aaya, kisi ka hona kitna khoobsurat ehsaas hota hai.']];
+let jn=0;
+function startJar(){jn=0;$('#jar').classList.remove('gone','full');$$('.ff2').forEach(b=>b.classList.remove('lit'));$('#jnote').className='';$('#jnote').innerHTML='<span class="jh">Jugnuon ko touch karo ✨</span>';$('#jcnt').textContent='0 / 6';$('#jarBtn').style.visibility='hidden'}
+$$('.ff2').forEach((b,i)=>b.onclick=()=>{if(b.classList.contains('lit'))return;b.classList.add('lit');vib();jn++;const n=$('#jnote');n.className='';void n.offsetWidth;n.innerHTML=`<div class="je">${JN[i][0]}</div><div class="jt">${JN[i][1]}</div>`;n.className='p';$('#jcnt').textContent=jn+' / 6';
+ const r=b.getBoundingClientRect(),a=AR(),x=r.left-a.left+r.width/2,y=r.top-a.top+r.height/2;boom(x,y,'#ffd98a',12);hearts(x,y);
+ if(jn==6)setTimeout(()=>{$('#jar').classList.add('full');confetti(60);$('#jnote').className='p';$('#jnote').innerHTML='<div class="je">💜</div><div class="jt">Aur aisi hazaaron baatein… bas tum ho.</div>';$('#jarBtn').style.visibility='visible'},2800)});
+$('#jarBtn').onclick=()=>{$('#jar').classList.add('gone');hearts(innerWidth/2,innerHeight/2);vib()};
+(function(){const J=$('#jar'),a=$('.jhead');for(let i=0;i<40;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*2}s`;J.insertBefore(s,a)}})();
 /* cake cut */
 (function(){const tiers=`<div class="t t3"></div><div class="t t2"></div><div class="t t1"></div><b class="cn">${CFG.her}</b>`+[78,112,146].map(x=>`<div class="cd" style="left:${x}px"><div class="fl"></div></div>`).join('')+[[34,112],[168,112],[8,58],[196,58]].map(p=>`<span class="sb" style="left:${p[0]}px;bottom:${p[1]}px">🍓</span>`).join('');
  $$('#cake2 .half').forEach(h=>h.innerHTML=tiers);
